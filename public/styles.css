@@ -1,11 +1,50 @@
 body {
     background-color: yellow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    
 }
 
 h1{
     background-color: red;
+    padding: 10px;
+    text-align: center;
+    
+    
 }
 
 ul {
     background-color: white;
+}
+
+img {
+    height: 50%;
+    width: 50%;
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    width: 95%;
+    text-align: left;
+    
+  }
+
+li {
+    display: block;
+}
+div2 {
+    display: inline-flex;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }

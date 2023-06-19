@@ -14,6 +14,7 @@
 
     <img src="<%= pokemonInfo.img %>" alt="pokemon Img">
 
+    <div1>
     <h3>type(s): <%= pokemonInfo.type %></h3>
 
     <h3>hp: <%= pokemonInfo.stats.hp %></h3>
@@ -21,13 +22,15 @@
     <h3>attack: <%= pokemonInfo.stats.attack %></h3>
 
     <h3>defense: <%= pokemonInfo.stats.defense %></h3>
+    </div1>
     
+    <div2>
     <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
 
     <form action="/pokemon/<%= id %>?_method=DELETE" method="POST">
         <input class="delete_button" type="submit" value="Delete"/>
       </form>
-
+    </div2>  
     <h3><a href="/pokemon">GO BACK TO LIST OF POKEMONS</a></h3>
 
 </body>
