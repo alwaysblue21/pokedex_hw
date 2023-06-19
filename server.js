@@ -28,11 +28,28 @@ app.get("/pokemon/new", (req, res) => {
     res.render("new.ejs")
 })
 //destory
-
+app.delete("/pokemon/:id", (req, res) => {
+    // grab the id from the url
+    const id = req.params.id
+    // splice the object out of the array
+    pokemon.splice(id, 1)
+    
+    // redirect user back to index
+    res.redirect("/pokemon")
+  })
 // update
 app.put("/pokemon/:id", (req, res) => {
     const id = req.params.id
-    pokemon[id] = req.body
+    let editPokemon = pokemon[id]
+    editPokemon.name = req.body.name
+    editPokemon.type = req.body.type
+    editPokemon.stats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense
+    }
+    pokemon[id] = editPokemon
+    
     res.redirect("/pokemon")
 })
 
@@ -40,18 +57,19 @@ app.put("/pokemon/:id", (req, res) => {
 app.post("/pokemon", (req, res) => {
   let newPokemon = {
     name: req.body.name,
-    img: req.body.image,
+    id: req.body.id,
+    img: req.body.image || "/images.jpeg"
   }  
   newPokemon.stats = {
     hp: req.body.hp,
     attack: req.body.attack,
     defense: req.body.defense
   }
-  pokemon.push(req.body)
+  pokemon.push(newPokemon)
   res.redirect("/pokemon")
 })
 //edit
-app.put("/pokemon/:id/edit", (req, res) => {
+app.get("/pokemon/:id/edit", (req, res) => {
     const id = req.params.id
     const pokemonInfo = pokemon[id]
     res.render("edit.ejs", {pokemonInfo, id})
@@ -61,7 +79,6 @@ app.put("/pokemon/:id/edit", (req, res) => {
 app.get("/pokemon/:id", (req, res) => {
     const id = req.params.id
     const pokemonInfo = pokemon[id]
-    console.log(pokemonInfo)
     res.render("show.ejs", {pokemonInfo, id});
     });
 

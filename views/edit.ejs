@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
-    <%- include("../imports.ejs") %>
+    <%- include("./imports.ejs") %>
 </head>
 <body>
     <h1>Pokedex</h1>
     
     <h2>Edit <%= pokemonInfo.name %></h2>
+    <img src="<%= pokemonInfo.img %>" alt="pokemon Img">
     <form action="/pokemon/<%= id %>?_method=PUT" method="post">
         <input type="text" name="name" placeholder="name of pokemon"
         value="<%= pokemonInfo.name %>"/>
