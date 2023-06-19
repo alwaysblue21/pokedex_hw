@@ -15,13 +15,13 @@
         <input type="text" name="name" placeholder="name of pokemon"
         value="<%= pokemonInfo.name %>"/>
         <input type="text" name="type" placeholder="type of pokemon"
-        value="<% pokemonInfo.stats.hp %>"/>
+        value="<%= pokemonInfo.type %>"/>
         <input type="text" name="hp" placeholder="hp of pokemon"
-        value="<% pokemonInfo.stats.hp %>"/>
+        value="<%= pokemonInfo.stats.hp %>"/>
         <input type="text" name="attack" placeholder="attack of pokemon"
-        value="<% pokemonInfo.stats.attack %>"/>
+        value="<%= pokemonInfo.stats.attack %>"/>
         <input type="text" name="defense" placeholder="defense of pokemon"
-        value="<% pokemonInfo.stats.defense %>"/>
+        value="<%= pokemonInfo.stats.defense %>"/>
         <input type="submit" value="edit <%= pokemonInfo.name %>"/>
     </form>
     

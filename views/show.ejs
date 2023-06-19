@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><% pokemonInfo.name %></title>
+    <title><%= pokemonInfo.name %></title>
     <%- include("../imports.ejs") %>
 </head>
 <body>
@@ -22,6 +22,8 @@
 
     <h3>defense: <%= pokemonInfo.stats.defense %></h3>
     
+    <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
+
     <h3><a href="/pokemon">GO BACK TO LIST OF POKEMONS</a></h3>
 
 </body>

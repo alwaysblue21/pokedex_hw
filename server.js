@@ -51,7 +51,7 @@ app.post("/pokemon", (req, res) => {
   res.redirect("/pokemon")
 })
 //edit
-app.get("/pokemon/:id/edit", (req, res) => {
+app.put("/pokemon/:id/edit", (req, res) => {
     const id = req.params.id
     const pokemonInfo = pokemon[id]
     res.render("edit.ejs", {pokemonInfo, id})
@@ -61,6 +61,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 app.get("/pokemon/:id", (req, res) => {
     const id = req.params.id
     const pokemonInfo = pokemon[id]
+    console.log(pokemonInfo)
     res.render("show.ejs", {pokemonInfo, id});
     });
 
