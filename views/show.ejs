@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><% pokemon.name %></title>
+    <title><% pokemonInfo.name %></title>
     <%- include("../imports.ejs") %>
 </head>
 <body>
@@ -14,7 +14,13 @@
 
     <img src="<%= pokemonInfo.img %>" alt="pokemon Img">
 
-    <h3>type: <%= pokemonInfo.type %></h3>
+    <h3>type(s): <%= pokemonInfo.type %></h3>
+
+    <h3>hp: <%= pokemonInfo.stats.hp %></h3>
+
+    <h3>attack: <%= pokemonInfo.stats.attack %></h3>
+
+    <h3>defense: <%= pokemonInfo.stats.defense %></h3>
     
     <h3><a href="/pokemon">GO BACK TO LIST OF POKEMONS</a></h3>
 
