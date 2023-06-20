@@ -14,8 +14,12 @@
     <div>
         <ul>
             <% for(let i = 0; i < pokemon.length; i++){ %>
-
-                <li><a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a></li>
+                
+                <li>
+                    <img src="<%= pokemon[i].img %>"/>
+                    <br><a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a>
+                    
+                </li>
 
          <% } %>
          </ul>

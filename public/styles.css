@@ -48,3 +48,8 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+.fit-picture {
+    height:fit-content;
+    width: fit-content;
+}
